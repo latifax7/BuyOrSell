@@ -491,7 +491,6 @@
         const CORRECT_PASSWORD = "PassBigMoney";
         let isGenerating = false;
         let countdownTimer;
-        let isFirstTime = true; // متغير لتتبع المرة الأولى
         
         function checkPassword() {
             const passwordInput = document.getElementById('passwordInput');
@@ -516,7 +515,7 @@
         }
         
         function generateSignal() {
-            if (isGenerating && !isFirstTime) return;
+            if (isGenerating) return;
             
             const strategy = document.getElementById('strategy').value;
             const system = document.getElementById('system').value;
@@ -527,14 +526,7 @@
                 return;
             }
             
-            // إذا كانت المرة الأولى، لا نعطل الزر ولا نظهر التايمر
-            if (isFirstTime) {
-                showOptimalSignal(strategy, system, market);
-                isFirstTime = false; // نجعلها false للمرات القادمة
-                return;
-            }
-            
-            // من المرة الثانية: نعطل الزر ونظهر التايمر
+            // تعطيل الزر وبدء التايمر
             isGenerating = true;
             const generateBtn = document.getElementById('generateBtn');
             const timerDisplay = document.getElementById('timerDisplay');
@@ -548,7 +540,7 @@
             document.getElementById('loadingMessage').style.display = 'flex';
             document.getElementById('signalResult').style.display = 'none';
             
-            // بدء العد التنازلي (60 ثانية) - للمرة الثانية فما فوق
+            // بدء العد التنازلي (60 ثانية)
             let timeLeft = 60;
             const timerElement = document.getElementById('timer');
             
@@ -602,7 +594,6 @@
             
             // إخفاء رسالة التحميل وإظهار النتيجة
             document.getElementById('loadingMessage').style.display = 'none';
-            document.getElementById('welcomeMessage').style.display = 'none';
             document.getElementById('signalResult').style.display = 'flex';
         }
         
