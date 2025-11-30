@@ -17,6 +17,7 @@
             color: white;
             min-height: 100vh;
             overflow: hidden;
+            padding: 10px;
         }
         
         /* صفحة كلمة المرور */
@@ -35,42 +36,34 @@
         
         .password-box {
             background: rgba(255, 255, 255, 0.08);
-            padding: 40px;
-            border-radius: 20px;
+            padding: 30px;
+            border-radius: 15px;
             text-align: center;
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            max-width: 400px;
+            max-width: 350px;
             width: 90%;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
         
         .password-logo {
-            font-size: 2.2em;
+            font-size: 1.8em;
             font-weight: bold;
             background: linear-gradient(45deg, #00d4ff, #0099ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
         
         .password-input {
             width: 100%;
-            padding: 15px;
-            margin: 20px 0;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
+            padding: 12px;
+            margin: 15px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
             background: rgba(255, 255, 255, 0.05);
             color: white;
-            font-size: 1em;
+            font-size: 0.9em;
             text-align: center;
-            transition: all 0.3s;
-        }
-        
-        .password-input:focus {
-            outline: none;
-            border-color: #00d4ff;
-            background: rgba(255, 255, 255, 0.1);
         }
         
         .password-btn {
@@ -78,21 +71,17 @@
             background: linear-gradient(45deg, #00d4ff, #0099ff);
             color: white;
             border: none;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 1.1em;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 1em;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .password-btn:hover {
-            transform: translateY(-2px);
         }
         
         .error-message {
             color: #ff6b9d;
-            margin-top: 10px;
+            margin-top: 8px;
+            font-size: 0.8em;
             display: none;
         }
 
@@ -100,15 +89,15 @@
         .main-site {
             display: none;
             height: 100vh;
-            padding: 20px;
         }
         
         .dashboard {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             height: 100%;
             display: flex;
             flex-direction: column;
+            padding: 5px;
         }
         
         /* الهيدر */
@@ -116,12 +105,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
-            margin-bottom: 15px;
+            padding: 8px 0;
+            margin-bottom: 8px;
         }
         
         .logo {
-            font-size: 1.8em;
+            font-size: 1.4em;
             font-weight: bold;
             background: linear-gradient(45deg, #00d4ff, #0099ff);
             -webkit-background-clip: text;
@@ -130,23 +119,24 @@
         
         .tagline {
             color: #a0a0c0;
-            font-size: 0.9em;
+            font-size: 0.7em;
         }
         
         .user-info {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             background: rgba(255, 255, 255, 0.08);
-            padding: 8px 15px;
-            border-radius: 8px;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8em;
         }
         
         /* المحتوى الرئيسي */
         .main-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 12px;
             flex: 1;
             min-height: 0;
         }
@@ -155,45 +145,44 @@
         .control-panel {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 10px;
         }
         
         .panel-section {
             background: rgba(255, 255, 255, 0.08);
-            padding: 20px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .section-title {
-            font-size: 1.1em;
+            font-size: 0.9em;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: #00d4ff;
         }
         
         select {
             width: 100%;
-            padding: 12px;
+            padding: 8px;
             border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
+            border-radius: 6px;
             background: rgba(255, 255, 255, 0.05);
             color: white;
-            font-size: 0.9em;
+            font-size: 0.8em;
         }
         
         .markets-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-            gap: 8px;
-            max-height: 120px;
+            grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
+            gap: 5px;
+            max-height: 80px;
             overflow-y: auto;
-            padding-right: 5px;
+            padding-right: 3px;
         }
         
         .markets-grid::-webkit-scrollbar {
-            width: 4px;
+            width: 3px;
         }
         
         .markets-grid::-webkit-scrollbar-thumb {
@@ -205,18 +194,16 @@
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
             color: white;
-            padding: 10px 5px;
-            border-radius: 6px;
+            padding: 6px 3px;
+            border-radius: 4px;
             cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.8em;
+            font-size: 0.7em;
             text-align: center;
         }
         
         .market-btn:hover, .market-btn.active {
             background: linear-gradient(45deg, #00d4ff, #0099ff);
             border-color: transparent;
-            transform: translateY(-1px);
         }
         
         .generate-btn {
@@ -224,25 +211,19 @@
             background: linear-gradient(45deg, #00d4ff, #0099ff);
             color: white;
             border: none;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 1.1em;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 0.9em;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 10px;
-        }
-        
-        .generate-btn:hover {
-            transform: translateY(-2px);
+            margin-top: 5px;
         }
         
         /* اللوحة اليمنى - النتائج */
         .results-panel {
             background: rgba(255, 255, 255, 0.08);
-            padding: 20px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             flex-direction: column;
@@ -257,40 +238,36 @@
         }
         
         .signal-type {
-            font-size: 2.5em;
+            font-size: 1.8em;
             font-weight: bold;
-            margin: 15px 0;
+            margin: 10px 0;
         }
         
-        .buy { 
-            color: #00ff9d;
-        }
-        
-        .sell { 
-            color: #ff6b9d;
-        }
+        .buy { color: #00ff9d; }
+        .sell { color: #ff6b9d; }
         
         .signal-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: 20px;
+            gap: 8px;
+            margin-top: 15px;
         }
         
         .signal-item {
             background: rgba(255, 255, 255, 0.05);
-            padding: 15px;
-            border-radius: 8px;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 0.8em;
         }
         
         .signal-label {
             color: #a0a0c0;
-            font-size: 0.8em;
-            margin-bottom: 5px;
+            font-size: 0.7em;
+            margin-bottom: 3px;
         }
         
         .signal-value {
-            font-size: 1em;
+            font-size: 0.9em;
             font-weight: bold;
         }
         
@@ -299,10 +276,11 @@
         }
         
         .signal-time {
-            margin-top: 15px;
-            padding: 12px;
+            margin-top: 10px;
+            padding: 8px;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
+            border-radius: 6px;
+            font-size: 0.8em;
         }
         
         .welcome-message {
@@ -316,18 +294,19 @@
         }
         
         .welcome-icon {
-            font-size: 3em;
-            margin-bottom: 15px;
+            font-size: 2em;
+            margin-bottom: 10px;
         }
         
         .welcome-text h3 {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             color: #00d4ff;
+            font-size: 1em;
         }
         
         .welcome-text p {
-            font-size: 0.9em;
-            line-height: 1.4;
+            font-size: 0.7em;
+            line-height: 1.2;
         }
     </style>
 </head>
@@ -336,9 +315,9 @@
     <div class="password-screen" id="passwordScreen">
         <div class="password-box">
             <div class="password-logo">🔐 AI Trading</div>
-            <h3 style="color: #a0a0c0; margin-bottom: 10px; font-size: 1em;">Secure Access Required</h3>
+            <p style="color: #a0a0c0; margin-bottom: 10px; font-size: 0.8em;">Enter password to access</p>
             <input type="password" class="password-input" id="passwordInput" placeholder="Enter Password" onkeypress="checkEnter(event)">
-            <button class="password-btn" onclick="checkPassword()">🚀 Access Platform</button>
+            <button class="password-btn" onclick="checkPassword()">🚀 Access</button>
             <div class="error-message" id="errorMessage">❌ Incorrect password</div>
         </div>
     </div>
@@ -355,8 +334,8 @@
                 <div class="user-info">
                     <div>👤</div>
                     <div>
-                        <div style="font-weight: bold; font-size: 0.9em;">BigMoney Trader</div>
-                        <div style="font-size: 0.7em; color: #a0a0c0;">Premium Account</div>
+                        <div style="font-weight: bold;">BigMoney Trader</div>
+                        <div style="font-size: 0.6em; color: #a0a0c0;">Premium</div>
                     </div>
                 </div>
             </div>
@@ -403,19 +382,19 @@
                     <div class="welcome-message" id="welcomeMessage">
                         <div class="welcome-icon">📊</div>
                         <div class="welcome-text">
-                            <h3>Welcome to AI Trading Signals</h3>
-                            <p>Select your trading strategy, AI system, and market to generate powerful trading signals.</p>
+                            <h3>Welcome</h3>
+                            <p>Select strategy, system, and market to generate trading signals.</p>
                         </div>
                     </div>
 
                     <div class="signal-result" id="signalResult">
-                        <h3 style="color: #00d4ff; margin-bottom: 10px;">TRADING SIGNAL</h3>
+                        <h3 style="color: #00d4ff; margin-bottom: 8px; font-size: 0.9em;">TRADING SIGNAL</h3>
                         <div class="signal-type" id="signalType">SELL</div>
                         
                         <div class="signal-grid">
                             <div class="signal-item">
                                 <div class="signal-label">MARKET</div>
-                                <div class="signal-value" id="signalMarket">EUR/USD (OTC)</div>
+                                <div class="signal-value" id="signalMarket">EUR/USD</div>
                             </div>
                             <div class="signal-item">
                                 <div class="signal-label">TIMEFRAME</div>
@@ -444,10 +423,8 @@
     </div>
 
     <script>
-        // كلمة المرور الصحيحة
         const CORRECT_PASSWORD = "PassBigMoney";
         
-        // التحقق من كلمة المرور
         function checkPassword() {
             const passwordInput = document.getElementById('passwordInput');
             const errorMessage = document.getElementById('errorMessage');
@@ -465,14 +442,12 @@
             }
         }
         
-        // الدخول بالزر Enter
         function checkEnter(event) {
             if (event.key === 'Enter') {
                 checkPassword();
             }
         }
         
-        // تهيئة تطبيق التداول بعد الدخول
         function initializeTradingApp() {
             const markets = [
                 'EUR/USD', 'GBP/USD', 'AUD/USD', 'USD/JPY', 'USD/CAD', 
@@ -526,8 +501,7 @@
             const timeframe = timeframes[Math.floor(Math.random() * timeframes.length)];
             const confidence = Math.floor(Math.random() * 25) + 75;
             
-            document.getElementById('signalMarket').textContent = selectedMarket + 
-                (selectedMarket.includes('Oil') || selectedMarket.includes('Gold') || selectedMarket.includes('Silver') ? '' : ' (OTC)');
+            document.getElementById('signalMarket').textContent = selectedMarket;
             document.getElementById('signalType').textContent = signalType;
             document.getElementById('signalType').className = `signal-type ${signalType.toLowerCase()}`;
             document.getElementById('signalTimeframe').textContent = timeframe;
