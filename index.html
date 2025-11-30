@@ -172,38 +172,10 @@
             font-size: 0.8em;
         }
         
-        .markets-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(85px, 1fr));
-            gap: 5px;
-            max-height: 80px;
-            overflow-y: auto;
-            padding-right: 3px;
-        }
-        
-        .markets-grid::-webkit-scrollbar {
-            width: 3px;
-        }
-        
-        .markets-grid::-webkit-scrollbar-thumb {
-            background: #00d4ff;
-            border-radius: 2px;
-        }
-        
-        .market-btn {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+        select option {
+            background: #1a1a2e;
             color: white;
-            padding: 6px 3px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.7em;
-            text-align: center;
-        }
-        
-        .market-btn:hover, .market-btn.active {
-            background: linear-gradient(45deg, #00d4ff, #0099ff);
-            border-color: transparent;
+            padding: 8px;
         }
         
         .generate-btn {
@@ -367,9 +339,39 @@
 
                     <div class="panel-section">
                         <div class="section-title">💱 Market Selection</div>
-                        <div class="markets-grid" id="markets">
-                            <!-- سيتم إضافة أزرار العملات هنا -->
-                        </div>
+                        <select id="market">
+                            <option value="">-- Select Market --</option>
+                            <!-- العملات الرئيسية -->
+                            <option value="EUR/USD">EUR/USD (OTC)</option>
+                            <option value="GBP/USD">GBP/USD (OTC)</option>
+                            <option value="AUD/USD">AUD/USD (OTC)</option>
+                            <option value="USD/JPY">USD/JPY (OTC)</option>
+                            <option value="USD/CAD">USD/CAD (OTC)</option>
+                            <option value="USD/CHF">USD/CHF (OTC)</option>
+                            <option value="EUR/JPY">EUR/JPY (OTC)</option>
+                            <option value="GBP/JPY">GBP/JPY (OTC)</option>
+                            <option value="NZD/USD">NZD/USD (OTC)</option>
+                            
+                            <!-- العملات المشفرة -->
+                            <option value="BTC/USD">BTC/USD (OTC)</option>
+                            <option value="ETH/USD">ETH/USD (OTC)</option>
+                            <option value="LTC/USD">LTC/USD (OTC)</option>
+                            <option value="XRP/USD">XRP/USD (OTC)</option>
+                            <option value="BCH/USD">BCH/USD (OTC)</option>
+                            
+                            <!-- أزواج العملات الإضافية -->
+                            <option value="AUD/JPY">AUD/JPY (OTC)</option>
+                            <option value="AUD/NZD">AUD/NZD (OTC)</option>
+                            <option value="AUD/CHF">AUD/CHF (OTC)</option>
+                            <option value="EUR/AUD">EUR/AUD (OTC)</option>
+                            <option value="EUR/GBP">EUR/GBP (OTC)</option>
+                            
+                            <!-- السلع -->
+                            <option value="Gold">Gold</option>
+                            <option value="Silver">Silver</option>
+                            <option value="Crude Oil">Crude Oil</option>
+                            <option value="Brent Oil">Brent Oil</option>
+                        </select>
                     </div>
 
                     <button class="generate-btn" onclick="generateSignal()">
@@ -434,7 +436,6 @@
             if (passwordInput.value === CORRECT_PASSWORD) {
                 passwordScreen.style.display = 'none';
                 mainSite.style.display = 'block';
-                initializeTradingApp();
             } else {
                 errorMessage.style.display = 'block';
                 passwordInput.value = '';
@@ -448,43 +449,13 @@
             }
         }
         
-        function initializeTradingApp() {
-            const markets = [
-                'EUR/USD', 'GBP/USD', 'AUD/USD', 'USD/JPY', 'USD/CAD', 
-                'USD/CHF', 'EUR/JPY', 'GBP/JPY', 'NZD/USD', 'BTC/USD', 
-                'ETH/USD', 'LTC/USD', 'XRP/USD', 'BCH/USD', 'AUD/JPY',
-                'AUD/NZD', 'EUR/AUD', 'EUR/GBP', 'AUD/CHF', 'Gold',
-                'Silver', 'Crude Oil', 'Brent Oil'
-            ];
-            
-            const marketsContainer = document.getElementById('markets');
-            markets.forEach(market => {
-                const button = document.createElement('button');
-                button.className = 'market-btn';
-                button.textContent = market;
-                button.onclick = () => selectMarket(market, button);
-                marketsContainer.appendChild(button);
-            });
-            
-            document.querySelector('.market-btn').click();
-        }
-        
-        let selectedMarket = 'EUR/USD';
-        
-        function selectMarket(market, button) {
-            selectedMarket = market;
-            document.querySelectorAll('.market-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            button.classList.add('active');
-        }
-        
         function generateSignal() {
             const strategy = document.getElementById('strategy').value;
             const system = document.getElementById('system').value;
+            const market = document.getElementById('market').value;
             
-            if (!strategy || !system) {
-                alert('⚠️ Please select both Strategy and System!');
+            if (!strategy || !system || !market) {
+                alert('⚠️ Please select Strategy, System, and Market!');
                 return;
             }
             
@@ -501,7 +472,7 @@
             const timeframe = timeframes[Math.floor(Math.random() * timeframes.length)];
             const confidence = Math.floor(Math.random() * 25) + 75;
             
-            document.getElementById('signalMarket').textContent = selectedMarket;
+            document.getElementById('signalMarket').textContent = market;
             document.getElementById('signalType').textContent = signalType;
             document.getElementById('signalType').className = `signal-type ${signalType.toLowerCase()}`;
             document.getElementById('signalTimeframe').textContent = timeframe;
